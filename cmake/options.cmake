@@ -78,3 +78,8 @@ endif()
 detectOsqueryVersion()
 
 message(STATUS "osquery version: ${OSQUERY_VERSION_INTERNAL}")
+
+if("${THIRD_PARTY_PREBUILT_PATH}" STREQUAL "")
+  set(THIRD_PARTY_PREBUILT_PATH "${CMAKE_SOURCE_DIR}/third-party-prebuilt")
+endif()
+
