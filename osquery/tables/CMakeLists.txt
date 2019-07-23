@@ -36,6 +36,11 @@ function(generateOsqueryTablesTableimplementations)
       osquery_tables_cloud
       osquery_tables_smart
     )
+
+  elseif(DEFINED PLATFORM_WINDOWS)
+    target_link_libraries(osquery_tables_tableimplementations INTERFACE
+      osquery_tables_cloud
+    )
   endif()
 
   target_link_libraries(osquery_tables_tableimplementations INTERFACE
